@@ -8,5 +8,8 @@
         x:Class="ReporterUI.Views.MainWindow"
         Icon="/Assets/avalonia-logo.ico"
         Title="ReporterUI">
-        <views:MainView />
+
+    <views:MainView />
+
+
 </Window>

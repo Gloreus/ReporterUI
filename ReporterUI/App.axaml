@@ -2,7 +2,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="using:ReporterUI"
              x:Class="ReporterUI.App"
-             RequestedThemeVariant="Default">
+             RequestedThemeVariant="Light">
              <!-- "Default" ThemeVariant follows system theme variant. "Dark" or "Light" are other available options. -->
 
     <Application.DataTemplates>
@@ -12,4 +12,17 @@
     <Application.Styles>
         <FluentTheme />
     </Application.Styles>
+             
+             <Application.Resources>
+                 <ResourceDictionary>
+                     <ResourceDictionary.ThemeDictionaries>
+                         <ResourceDictionary x:Key="Light">
+                             <x:String  x:Key="SvgCss">path {fill: red;} </x:String> 
+                         </ResourceDictionary>
+                         <ResourceDictionary x:Key="Dark">
+                             <x:String  x:Key="SvgCss">path {fill: white;} </x:String> 
+                         </ResourceDictionary>
+                     </ResourceDictionary.ThemeDictionaries>
+                 </ResourceDictionary>
+             </Application.Resources>             
 </Application>

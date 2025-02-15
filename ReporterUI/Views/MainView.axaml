@@ -13,7 +13,7 @@
     </Design.DataContext>
     <StackPanel Orientation="Vertical">
         <TextBlock Text="{Binding Greeting}" HorizontalAlignment="Center" VerticalAlignment="Center" />
-        <Button Classes="ToolBtn help" Content="Start"/>
+        <Button Classes="ToolBtn help" Content="Start" HorizontalAlignment="Center"/>
         
         <Button HorizontalAlignment="Center" VerticalAlignment="Center" Width="35" Classes="help">
         </Button>
@@ -25,9 +25,9 @@
         <Style Selector="Button.ToolBtn">
             <Setter Property="Template">
                 <ControlTemplate>
-                    <Button>
+                    <Button Width="128">
                         <ToolTip.Tip> <ContentPresenter Content="{TemplateBinding Content}" /></ToolTip.Tip> 
-                        <Svg Width="16" Height="16" />
+                        <Svg  />
                     </Button>
                 </ControlTemplate>
             </Setter>
@@ -35,6 +35,7 @@
         
         <Style Selector="Button.help Svg">
             <Setter Property="Path" Value="/Assets/SVG/help-circle.svg" />
+            <Setter Property="Css" Value="{DynamicResource SvgCss}" />
         </Style>
     </UserControl.Styles>
     
