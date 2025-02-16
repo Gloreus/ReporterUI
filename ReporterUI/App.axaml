@@ -2,27 +2,30 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="using:ReporterUI"
              x:Class="ReporterUI.App"
-             RequestedThemeVariant="Light">
-             <!-- "Default" ThemeVariant follows system theme variant. "Dark" or "Light" are other available options. -->
+             RequestedThemeVariant="Dark">
+    <!-- "Default" ThemeVariant follows system theme variant. "Dark" or "Light" are other available options. -->
 
     <Application.DataTemplates>
-        <local:ViewLocator/>
+        <local:ViewLocator />
     </Application.DataTemplates>
 
     <Application.Styles>
         <FluentTheme />
+        <StyleInclude Source="/Styles/Common.axaml" />
     </Application.Styles>
-             
-             <Application.Resources>
-                 <ResourceDictionary>
-                     <ResourceDictionary.ThemeDictionaries>
-                         <ResourceDictionary x:Key="Light">
-                             <x:String  x:Key="SvgCss">path {fill: red;} </x:String> 
-                         </ResourceDictionary>
-                         <ResourceDictionary x:Key="Dark">
-                             <x:String  x:Key="SvgCss">path {fill: white;} </x:String> 
-                         </ResourceDictionary>
-                     </ResourceDictionary.ThemeDictionaries>
-                 </ResourceDictionary>
-             </Application.Resources>             
+
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.ThemeDictionaries>
+                <ResourceDictionary x:Key="Light">
+                    <x:String x:Key="SvgCss">path {fill: Black;} </x:String>
+                    <SolidColorBrush  x:Key="ToolBarBorder">LightGray</SolidColorBrush> 
+                </ResourceDictionary>
+                <ResourceDictionary x:Key="Dark">
+                    <x:String x:Key="SvgCss">path {fill: LightGray;} </x:String>
+                    <SolidColorBrush  x:Key="ToolBarBorder">DarkSlateGray</SolidColorBrush> 
+                </ResourceDictionary>
+            </ResourceDictionary.ThemeDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
 </Application>

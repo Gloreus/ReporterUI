@@ -1,0 +1,31 @@
+﻿<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Design.PreviewWith>
+        <Border Padding="20">
+            <!-- Add Controls for Previewer Here -->
+        </Border>
+    </Design.PreviewWith>
+    
+    <Style Selector="Border.ToolBar">
+        <Setter Property="BorderThickness" Value="0 0 1 0"></Setter>
+        <Setter Property="BorderBrush" Value="{DynamicResource ToolBarBorder}" />
+    </Style>
+    
+    <Style Selector="Button.ToolBtn">
+        <Setter Property="Template">
+            <ControlTemplate>
+                <Button Width="64" Background="Transparent">
+                    <ToolTip.Tip> <ContentPresenter Content="{TemplateBinding Content}" /></ToolTip.Tip> 
+                    <Svg Css = "{DynamicResource SvgCss}"/>
+                </Button>
+            </ControlTemplate>
+        </Setter>
+    </Style>
+        
+    <Style Selector="Button.help Svg">
+        <Setter Property="Path" Value="/Assets/SVG/help-circle.svg" />
+    </Style>
+    <Style Selector="Button.search Svg">
+        <Setter Property="Path" Value="/Assets/SVG/search.svg" />
+    </Style>
+</Styles>

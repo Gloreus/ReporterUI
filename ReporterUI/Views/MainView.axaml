@@ -11,32 +11,16 @@
          to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
         <vm:MainViewModel />
     </Design.DataContext>
-    <StackPanel Orientation="Vertical">
-        <TextBlock Text="{Binding Greeting}" HorizontalAlignment="Center" VerticalAlignment="Center" />
-        <Button Classes="ToolBtn help" Content="Start" HorizontalAlignment="Center"/>
-        
-        <Button HorizontalAlignment="Center" VerticalAlignment="Center" Width="35" Classes="help">
-        </Button>
-        
-    </StackPanel>
+    <Grid ColumnDefinitions="80 96*">
+        <StackPanel Grid.Column="1" Orientation="Vertical" HorizontalAlignment="Center" Margin="2" Spacing="2">
+            <TextBlock Text="{Binding Greeting}" HorizontalAlignment="Center" VerticalAlignment="Center" />
+        </StackPanel>
+        <Border Classes="ToolBar" Grid.Column="0">
 
-
-    <UserControl.Styles>
-        <Style Selector="Button.ToolBtn">
-            <Setter Property="Template">
-                <ControlTemplate>
-                    <Button Width="128">
-                        <ToolTip.Tip> <ContentPresenter Content="{TemplateBinding Content}" /></ToolTip.Tip> 
-                        <Svg  />
-                    </Button>
-                </ControlTemplate>
-            </Setter>
-        </Style>
-        
-        <Style Selector="Button.help Svg">
-            <Setter Property="Path" Value="/Assets/SVG/help-circle.svg" />
-            <Setter Property="Css" Value="{DynamicResource SvgCss}" />
-        </Style>
-    </UserControl.Styles>
-    
+            <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
+                <Button Classes="ToolBtn help" Content="Help" />
+                <Button Classes="ToolBtn search" Content="Поиск..." />
+            </StackPanel>
+        </Border>
+    </Grid>
 </UserControl>
