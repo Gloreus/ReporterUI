@@ -7,14 +7,15 @@
     </Design.PreviewWith>
     
     <Style Selector="Border.ToolBar">
-        <Setter Property="BorderThickness" Value="0 0 1 0"></Setter>
+        <Setter Property="BorderThickness" Value="1  1 1 1"></Setter>
+        <Setter Property="CornerRadius" Value="3" />
         <Setter Property="BorderBrush" Value="{DynamicResource ToolBarBorder}" />
     </Style>
     
     <Style Selector="Button.ToolBtn">
         <Setter Property="Template">
             <ControlTemplate>
-                <Button Width="64" Background="Transparent">
+                <Button Width="48" Background="Transparent">
                     <ToolTip.Tip> <ContentPresenter Content="{TemplateBinding Content}" /></ToolTip.Tip> 
                     <Svg Css = "{DynamicResource SvgCss}"/>
                 </Button>
@@ -27,5 +28,11 @@
     </Style>
     <Style Selector="Button.search Svg">
         <Setter Property="Path" Value="/Assets/SVG/search.svg" />
+    </Style>
+    <Style Selector="Button.home Svg">
+        <Setter Property="Path" Value="/Assets/SVG/home.svg" />
+    </Style>
+    <Style Selector="Button.play Svg">
+        <Setter Property="Path" Value="/Assets/SVG/play.svg" />
     </Style>
 </Styles>

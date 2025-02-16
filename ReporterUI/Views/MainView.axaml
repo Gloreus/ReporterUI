@@ -2,7 +2,9 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             
              xmlns:vm="clr-namespace:ReporterUI.ViewModels"
+             xmlns:v="clr-namespace:ReporterUI.Views"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="ReporterUI.Views.MainView"
              x:DataType="vm:MainViewModel">
@@ -11,16 +13,12 @@
          to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
         <vm:MainViewModel />
     </Design.DataContext>
-    <Grid ColumnDefinitions="80 96*">
-        <StackPanel Grid.Column="1" Orientation="Vertical" HorizontalAlignment="Center" Margin="2" Spacing="2">
-            <TextBlock Text="{Binding Greeting}" HorizontalAlignment="Center" VerticalAlignment="Center" />
-        </StackPanel>
-        <Border Classes="ToolBar" Grid.Column="0">
+    
+    <Grid RowDefinitions="Auto, Auto, *">
+        <TextBox Grid.Row="0" Margin="30 2 30 2 " Text="Поиск..." HorizontalAlignment="Center" />
+        <v:ToolbarView Grid.Row="1" />
 
-            <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
-                <Button Classes="ToolBtn help" Content="Help" />
-                <Button Classes="ToolBtn search" Content="Поиск..." />
-            </StackPanel>
-        </Border>
+        <Grid ColumnDefinitions="33* 66*" Grid.Row="2">
     </Grid>
+        </Grid>
 </UserControl>

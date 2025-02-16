@@ -16,7 +16,6 @@ internal sealed class Program
     private static AppBuilder BuildAvaloniaApp()
         => AppBuilder.Configure<App>()
             .UsePlatformDetect()
-            .WithInterFont()
             .UseSkia()
             .LogToTrace();
 }
