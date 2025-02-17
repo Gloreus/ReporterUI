@@ -1,0 +1,25 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="clr-namespace:ReporterUI.ViewModels"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="ReporterUI.Views.GroupsView"
+             x:DataType="vm:MainViewModel">
+
+    <ListBox ItemsSource="{Binding Groups}">
+        <ListBox.DataTemplates>
+            <DataTemplate DataType="vm:Group">
+                <ToolTip IsOpen="False" Tip="{Binding Description}" Margin="0">
+                    <TextBlock 
+                       Theme= "{StaticResource SubtitleTextBlockStyle}"
+                       TextTrimming="WordEllipsis"
+                       MaxLines="1"
+                       TextWrapping="WrapWithOverflow"
+                       Text="{Binding Name}" />
+                </ToolTip>  
+            </DataTemplate>
+        </ListBox.DataTemplates>
+    </ListBox>  
+</UserControl>
+
