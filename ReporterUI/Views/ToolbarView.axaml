@@ -8,10 +8,10 @@
     <Border Classes="ToolBar">
         <Panel>
             <StackPanel Orientation="Horizontal">
-                <Button Classes="ToolBtn search" Content="Поиск..." />
-                <Button Classes="ToolBtn play" Content="Run report" />
+                <Button Width="32" Classes="ToolBtn search" Content="Поиск..." />
+                <Button Width="32" Classes="ToolBtn play" Content="Run report" />
             </StackPanel>
-            <Button Classes="ToolBtn help" Content="Help" HorizontalAlignment="Right" />
+            <Button Width="32" Classes="ToolBtn help" Content="Help" HorizontalAlignment="Right" />
         </Panel>
     </Border>
 </UserControl>

@@ -1,5 +1,6 @@
 ﻿<Styles xmlns="https://github.com/avaloniaui"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:ui="clr-namespace:FluentAvalonia.UI.Controls;assembly=FluentAvalonia">
     <Design.PreviewWith>
         <Border Padding="20">
             <!-- Add Controls for Previewer Here -->
@@ -15,26 +16,36 @@
     <Style Selector="Button.ToolBtn">
         <Setter Property="Template">
             <ControlTemplate>
-                <Button Width="48" Background="Transparent">
+                <Button Background="Transparent" Command="{TemplateBinding Command}">
                     <ToolTip.Tip>
                         <ContentPresenter Content="{TemplateBinding Content}" />
                     </ToolTip.Tip>
-                    <Svg Css="{DynamicResource SvgCss}" />
+                    <ui:SymbolIcon  />
                 </Button>
             </ControlTemplate>
         </Setter>
     </Style>
 
-    <Style Selector="Button.help Svg">
-        <Setter Property="Path" Value="/Assets/SVG/help-circle.svg" />
+    <Style Selector="Button.Help ui|SymbolIcon">
+        <Setter Property="Symbol" Value="Help" />
     </Style>
-    <Style Selector="Button.search Svg">
-        <Setter Property="Path" Value="/Assets/SVG/search.svg" />
+    <Style Selector="Button.Find ui|SymbolIcon">
+        <Setter Property="Symbol" Value="Find" />
     </Style>
-    <Style Selector="Button.home Svg">
-        <Setter Property="Path" Value="/Assets/SVG/home.svg" />
+    <Style Selector="Button.SortUp ui|SymbolIcon">
+        <Setter Property="Symbol" Value="ChevronUp" />
     </Style>
-    <Style Selector="Button.play Svg">
-        <Setter Property="Path" Value="/Assets/SVG/play.svg" />
+    <Style Selector="Button.SortDown ui|SymbolIcon">
+        <Setter Property="Symbol" Value="ChevronDown" />
     </Style>
+    
+    <Style Selector="TextBlock.GroupHeader" >
+        <!--<Setter Property="Theme" Value="{DynamicResource CaptionTextBlockStyle}" />-->
+        <Setter Property="TextTrimming" Value="WordEllipsis" />
+        <Setter Property="TextWrapping" Value="WrapWithOverflow" />
+        <Setter Property="MaxLines" Value="2"  />
+        <Setter Property="Padding" Value="5 1 2 1" />
+        <Setter Property="LineHeight" Value="18" />
+    </Style>
+
 </Styles>

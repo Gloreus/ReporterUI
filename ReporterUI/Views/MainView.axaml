@@ -19,7 +19,7 @@
         <v:ToolbarView Grid.Row="1" />
 
         <Grid ColumnDefinitions="Auto *" Grid.Row="2">
-            <v:GroupsView Grid.Column="0" MinWidth="250" MaxWidth="600" />
+            <v:GroupsView Grid.Column="0" MinWidth="200" MaxWidth="300" />
         </Grid>
     </Grid>
 </UserControl>

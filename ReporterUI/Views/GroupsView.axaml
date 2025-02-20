@@ -2,24 +2,34 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:ui="clr-namespace:FluentAvalonia.UI.Controls;assembly=FluentAvalonia"
              xmlns:vm="clr-namespace:ReporterUI.ViewModels"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="ReporterUI.Views.GroupsView"
              x:DataType="vm:MainViewModel">
 
-    <ListBox ItemsSource="{Binding Groups}">
+<Grid RowDefinitions="Auto, Auto, *">
+    <Border Classes="ToolBar">
+        <StackPanel Orientation="Horizontal">
+        <TextBlock Grid.Row="0"
+                   Margin="8 3 2 3 "
+                   VerticalAlignment="Center"
+                   Text="Группы отчетов" Theme="{DynamicResource BodyStrongTextBlockStyle}" />
+        <Button Classes="ToolBtn Find" HorizontalAlignment="Right" Content="Быстрый фильтр.."  />
+        <Button Classes="ToolBtn SortUp" HorizontalAlignment="Right" Content="Сортировать А..я" Command="{Binding GroupSortUpCommand}" />
+        <Button Classes="ToolBtn SortDown" HorizontalAlignment="Right" Content="Сортировать я..А" Command="{Binding GroupSortDownCommand}" />
+        </StackPanel>
+    </Border>
+    <TextBox Grid.Row="1" Name="SearchGroupTextBox" Watermark="Поиск группы..." />
+    <ListBox Grid.Row="2" ItemsSource="{Binding Groups}">
         <ListBox.DataTemplates>
             <DataTemplate DataType="vm:Group">
                 <ToolTip IsOpen="False" Tip="{Binding Description}" Margin="0">
-                    <TextBlock 
-                       Theme= "{StaticResource SubtitleTextBlockStyle}"
-                       TextTrimming="WordEllipsis"
-                       MaxLines="1"
-                       TextWrapping="WrapWithOverflow"
-                       Text="{Binding Name}" />
-                </ToolTip>  
+                    <TextBlock Classes="GroupHeader" VerticalAlignment="Center" Text="{Binding Name}" />
+                </ToolTip>
             </DataTemplate>
         </ListBox.DataTemplates>
-    </ListBox>  
+    </ListBox>
+</Grid>
+    
 </UserControl>
-
