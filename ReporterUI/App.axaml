@@ -4,7 +4,7 @@
 
              xmlns:local="using:ReporterUI"
              x:Class="ReporterUI.App"
-             RequestedThemeVariant="Default">
+             RequestedThemeVariant="Dark">
     <!-- "Default" ThemeVariant follows system theme variant. "Dark" or "Light" are other available options. -->
 
     <Application.DataTemplates>

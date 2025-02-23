@@ -20,7 +20,7 @@
                     <ToolTip.Tip>
                         <ContentPresenter Content="{TemplateBinding Content}" />
                     </ToolTip.Tip>
-                    <ui:SymbolIcon  />
+                    <ui:SymbolIcon />
                 </Button>
             </ControlTemplate>
         </Setter>
@@ -38,14 +38,38 @@
     <Style Selector="Button.SortDown ui|SymbolIcon">
         <Setter Property="Symbol" Value="ChevronDown" />
     </Style>
-    
-    <Style Selector="TextBlock.GroupHeader" >
-        <!--<Setter Property="Theme" Value="{DynamicResource CaptionTextBlockStyle}" />-->
+
+    <Style Selector="ListBox.Groups ListBoxItem">
+        <Style Selector="^ TextBlock">
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="FontFamily" Value="Helvetica Neue" />
         <Setter Property="TextTrimming" Value="WordEllipsis" />
         <Setter Property="TextWrapping" Value="WrapWithOverflow" />
-        <Setter Property="MaxLines" Value="2"  />
+        <Setter Property="MaxLines" Value="1" />
         <Setter Property="Padding" Value="5 1 2 1" />
+        <Setter Property="Margin" Value="3" />
         <Setter Property="LineHeight" Value="18" />
+        </Style>
+        <Style Selector="^:pointerover TextBlock">
+            <Setter Property="FontSize" Value="18" />
+            <Setter Property="FontWeight" Value="Normal" />
+        </Style>
+        <Style Selector="^:selected TextBlock">
+            <Setter Property="FontSize" Value="18" />
+            <Setter Property="FontWeight" Value="Medium" />
+        </Style>
     </Style>
+
+    <Style Selector="ToolTip:open TextBlock">
+        <Setter Property="FontSize" Value="12" />
+        <Setter Property="FontFamily" Value="Display" />
+        <Setter Property="TextTrimming" Value="WordEllipsis" />
+        <Setter Property="TextWrapping" Value="WrapWithOverflow" />
+        <Setter Property="MaxLines" Value="4" />
+        <Setter Property="Padding" Value="5 1 2 1" />
+        <Setter Property="MaxWidth" Value="400" />
+        <Setter Property="LineHeight" Value="15" />
+    </Style>
+
 
 </Styles>

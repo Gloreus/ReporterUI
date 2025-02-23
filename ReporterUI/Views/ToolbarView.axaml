@@ -2,16 +2,24 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:ui="clr-namespace:FluentAvalonia.UI.Controls;assembly=FluentAvalonia"
+             xmlns:vm="clr-namespace:ReporterUI.ViewModels"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:DataType="vm:MainViewModel"
              x:Class="ReporterUI.Views.ToolbarView">
 
     <Border Classes="ToolBar">
-        <Panel>
-            <StackPanel Orientation="Horizontal">
-                <Button Width="32" Classes="ToolBtn search" Content="Поиск..." />
-                <Button Width="32" Classes="ToolBtn play" Content="Run report" />
-            </StackPanel>
-            <Button Width="32" Classes="ToolBtn help" Content="Help" HorizontalAlignment="Right" />
-        </Panel>
+        <ui:CommandBar HorizontalAlignment="Right" ClosedDisplayMode="Compact">
+            <ui:CommandBar.PrimaryCommands>
+                <ui:CommandBarButton
+                    HorizontalAlignment="Right"
+                    IconSource="WeatherSunny"
+                    ToolTip.Tip="Choose Theme"
+                    Command="{Binding ThemeChangeCommand}"/>
+                <ui:CommandBarSeparator />
+                <ui:CommandBarButton IconSource="Settings" Label="Config" />
+                <ui:CommandBarButton IconSource="Help" Label="Help" />
+            </ui:CommandBar.PrimaryCommands>
+        </ui:CommandBar>
     </Border>
 </UserControl>

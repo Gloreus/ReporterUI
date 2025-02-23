@@ -23,4 +23,11 @@
         <PackageReference Include="CommunityToolkit.Mvvm"/>
         <PackageReference Include="FluentAvaloniaUI" />
     </ItemGroup>
+
+    <ItemGroup>
+      <Compile Update="Views\GroupsTreeView.axaml.cs">
+        <DependentUpon>GroupsTreeView.axaml</DependentUpon>
+        <SubType>Code</SubType>
+      </Compile>
+    </ItemGroup>
 </Project>

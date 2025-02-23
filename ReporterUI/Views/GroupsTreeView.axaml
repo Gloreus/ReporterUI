@@ -2,10 +2,9 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             xmlns:ui="clr-namespace:FluentAvalonia.UI.Controls;assembly=FluentAvalonia"
              xmlns:vm="clr-namespace:ReporterUI.ViewModels"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
-             x:Class="ReporterUI.Views.GroupsView"
+             x:Class="ReporterUI.Views.GroupsTreeView"
              x:DataType="vm:MainViewModel">
 
     <Grid RowDefinitions="Auto, Auto, *">
@@ -23,18 +22,26 @@
             </StackPanel>
         </Border>
         <TextBox Grid.Row="1" Name="SearchGroupTextBox" Watermark="Поиск группы..." />
-
-        <ListBox Classes="Groups" Grid.Row="2"
-                 ItemsSource="{Binding ItemsSource}"
-                 SelectedItem="{Binding CurrentGroup}" >
+        <ListBox Grid.Row="2"
+                  SelectionMode="AlwaysSelected"
+                  ItemsSource="{Binding ItemsSource}"
+                  SelectedItem="{Binding CurrentGroup}">
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                    <ToolTip Tip="{Binding Description}" ShowDelay="1000" IsOpen="False">
-                        <TextBlock Text="{Binding Name}" />
-                    </ToolTip>
+                    <TextBlock Classes="GroupName" Text="{Binding Name}" ToolTip.Tip="4545454545454545" />
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
     </Grid>
-
+    
+    <UserControl.Styles>
+        <Style Selector="TextBlock.GroupName">
+            <Setter Property="FontFamily" Value="Helvetica Neue" />
+            <Setter Property="FontSize" Value="16" />
+            <Setter Property="FontWeight" Value="Light" />
+            <Setter Property="TextWrapping" Value="WrapWithOverflow" />
+            <Setter Property="TextTrimming" Value="WordEllipsis" />
+            <Setter Property="MaxLines" Value="1" />
+        </Style>
+    </UserControl.Styles>
 </UserControl>
